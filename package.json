@@ -19,7 +19,14 @@
     },
     "library": {
       "name": "hello.lib",
-      "namespace": "Hello"
+      "namespace": "Hello",
+      "require": [
+        "irmin",
+        "irmin-git",
+        "irmin-unix",
+        "lwt",
+        "lwt_ppx"
+      ]
     },
     "executable": {
       "require": ["hello.lib"],
@@ -34,12 +41,22 @@
   "dependencies": {
     "@opam/dune": ">=1.6.0",
     "@esy-ocaml/reason": "*",
-    "ocaml": "^4.4.0"
+    "ocaml": "^4.4.0",
+    "@opam/irmin": "*",
+    "@opam/irmin-git": "*",
+    "@opam/irmin-unix": "*",
+    "@opam/lwt": "*",
+    "@opam/lwt_ppx": "*"
   },
   "devDependencies": {
     "ocaml": "4.7.1004",
     "refmterr": "*",
     "pesy": "*",
-    "@opam/merlin": "*"
+    "@opam/merlin": "*",
+    "@opam/merlin-lsp": "*"
+  },
+  "resolutions": {
+    "@opam/merlin": "ocaml/merlin:merlin.opam#f030d5d",
+    "@opam/merlin-lsp": "ocaml/merlin:merlin-lsp.opam#f030d5d"
   }
 }
